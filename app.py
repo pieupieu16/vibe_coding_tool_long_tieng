@@ -29,6 +29,29 @@ from src.text.symbols import symbols
 from src.utils import helpers as utils
 
 
+# ============== Viphoneme Check ==============
+
+def check_viphoneme():
+    """Check if viphoneme is working properly."""
+    from src.vietnamese.phonemizer import VIPHONEME_AVAILABLE, text_to_phonemes
+    
+    print(f"Viphoneme available: {VIPHONEME_AVAILABLE}")
+    
+    if VIPHONEME_AVAILABLE:
+        try:
+            # Test with a simple Vietnamese text
+            test_text = "Xin chào"
+            phones, tones, word2ph = text_to_phonemes(test_text, use_viphoneme=True)
+            print(f"✅ Viphoneme test passed: '{test_text}' -> {phones[:5]}...")
+            return True
+        except Exception as e:
+            print(f"❌ Viphoneme test failed: {e}")
+            return False
+    else:
+        print("⚠️ Viphoneme not available, using fallback phonemizer")
+        return False
+
+
 # ============== Model Loading ==============
 
 def find_latest_checkpoint(model_dir, prefix="G"):
@@ -343,7 +366,7 @@ def create_demo(tts_interface):
         gr.Markdown("""
             ---
             <div style="text-align: center; color: #666; font-size: 0.9em;">
-                Hệ thống tổng hợp giọng nói tiếng Việt | Mô hình VITS
+                Hệ thống tổng hợp giọng nói tiếng Việt | Powered by <b>Valtec AI Team</b>
             </div>
         """)
     
@@ -354,6 +377,9 @@ def create_demo(tts_interface):
 
 if __name__ == "__main__":
     print("Đang khởi động hệ thống tổng hợp giọng nói tiếng Việt...")
+    
+    # Check viphoneme
+    check_viphoneme()
     
     tts_interface = TTSInterface()
     demo = create_demo(tts_interface)
