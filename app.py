@@ -265,8 +265,14 @@ def create_demo(tts_interface):
     with gr.Blocks(
         theme=gr.themes.Soft(primary_hue="blue", secondary_hue="cyan"),
         title="Chuyển Văn Bản Thành Giọng Nói Tiếng Việt",
-        css="""
-        .gradio-container { max-width: 900px !important; }
+        css=\"\"\"
+        .gradio-container { 
+            max-width: 900px !important; 
+            margin: 0 auto !important;
+        }
+        .main {
+            margin: 0 auto !important;
+        }
         #title {
             text-align: center;
             background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
@@ -274,7 +280,11 @@ def create_demo(tts_interface):
             -webkit-text-fill-color: transparent;
             font-weight: bold;
         }
-        """
+        .contain {
+            max-width: 900px !important;
+            margin: 0 auto !important;
+        }
+        \"\"\"
     ) as demo:
         
         gr.Markdown("""
