@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 """
-Valtec Vietnamese TTS - Hugging Face Spaces Demo
-A simple web interface for Vietnamese text-to-speech synthesis.
+Vietnamese TTS - Hugging Face Spaces Demo
+Giao diện web chuyển văn bản tiếng Việt thành giọng nói.
 """
 
 import os
@@ -232,16 +232,16 @@ def create_demo(tts_interface):
     """Create Gradio interface."""
     
     examples = [
-        ["Xin chào, tôi là trợ lý AI của Valtec", "male", 1.0, 0.667, 0.8, 0.0],
+        ["Xin chào, chúc bạn một ngày tốt lành", "male", 1.0, 0.667, 0.8, 0.0],
         ["Buổi sáng hôm nay trời trong xanh và gió thổi rất nhẹ", "male", 1.0, 0.667, 0.8, 0.0],
         ["Tôi pha một tách cà phê nóng và ngồi nhìn ánh nắng chiếu qua cửa sổ", "female", 1.0, 0.667, 0.8, 0.0],
         ["Việt Nam là một đất nước xinh đẹp với văn hóa phong phú", "male", 0.9, 0.667, 0.8, 0.0],
-        ["Công nghệ trí tuệ nhân tạo đang phát triển rất nhanh", "female", 1.1, 0.667, 0.8, 0.0],
+        ["Con đường làng quê rợp bóng tre xanh mát rượi", "female", 1.1, 0.667, 0.8, 0.0],
     ]
     
     with gr.Blocks(
         theme=gr.themes.Soft(primary_hue="blue", secondary_hue="cyan"),
-        title="Valtec Vietnamese TTS",
+        title="Chuyển Văn Bản Thành Giọng Nói Tiếng Việt",
         css="""
         .gradio-container { max-width: 900px !important; }
         #title {
@@ -255,9 +255,9 @@ def create_demo(tts_interface):
     ) as demo:
         
         gr.Markdown("""
-            # <span id="title">🎙️ Valtec Vietnamese TTS</span>
+            # <span id="title">🎙️ Chuyển Văn Bản Thành Giọng Nói</span>
             
-            ### Hệ thống chuyển văn bản thành giọng nói tiếng Việt
+            ### Hệ thống tổng hợp giọng nói tiếng Việt
             
             Nhập văn bản tiếng Việt và chọn giọng đọc để tạo audio.
         """)
@@ -343,7 +343,7 @@ def create_demo(tts_interface):
         gr.Markdown("""
             ---
             <div style="text-align: center; color: #666; font-size: 0.9em;">
-                Powered by <b>Valtec TTS</b> | Model: VITS-based Vietnamese TTS
+                Hệ thống tổng hợp giọng nói tiếng Việt | Mô hình VITS
             </div>
         """)
     
@@ -353,7 +353,7 @@ def create_demo(tts_interface):
 # ============== Main ==============
 
 if __name__ == "__main__":
-    print("Starting Valtec Vietnamese TTS Demo...")
+    print("Đang khởi động hệ thống tổng hợp giọng nói tiếng Việt...")
     
     tts_interface = TTSInterface()
     demo = create_demo(tts_interface)
