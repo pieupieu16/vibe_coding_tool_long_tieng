@@ -266,12 +266,15 @@ def create_demo(tts_interface):
         theme=gr.themes.Soft(primary_hue="blue", secondary_hue="cyan"),
         title="Chuyển Văn Bản Thành Giọng Nói Tiếng Việt",
         css=\"\"\"
+        /* Base styles - Mobile first */
         .gradio-container { 
-            max-width: 900px !important; 
+            max-width: 100% !important; 
             margin: 0 auto !important;
+            padding: 10px !important;
         }
         .main {
             margin: 0 auto !important;
+            padding: 0 10px !important;
         }
         #title {
             text-align: center;
@@ -279,10 +282,39 @@ def create_demo(tts_interface):
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: bold;
+            font-size: 1.5rem;
         }
         .contain {
-            max-width: 900px !important;
+            max-width: 100% !important;
             margin: 0 auto !important;
+        }
+        
+        /* Tablet (768px+) */
+        @media (min-width: 768px) {
+            .gradio-container { 
+                max-width: 750px !important; 
+                padding: 20px !important;
+            }
+            #title {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Desktop (1024px+) */
+        @media (min-width: 1024px) {
+            .gradio-container { 
+                max-width: 900px !important; 
+            }
+            #title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* Large screens (1200px+) */
+        @media (min-width: 1200px) {
+            .gradio-container { 
+                max-width: 1000px !important; 
+            }
         }
         \"\"\"
     ) as demo:
