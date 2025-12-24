@@ -265,7 +265,7 @@ def create_demo(tts_interface):
     with gr.Blocks(
         theme=gr.themes.Soft(primary_hue="blue", secondary_hue="cyan"),
         title="Chuyển Văn Bản Thành Giọng Nói Tiếng Việt",
-        css=\"\"\"
+        css="""
         /* Base styles - Mobile first */
         .gradio-container { 
             max-width: 100% !important; 
@@ -316,7 +316,7 @@ def create_demo(tts_interface):
                 max-width: 1000px !important; 
             }
         }
-        \"\"\"
+        """
     ) as demo:
         
         gr.Markdown("""
