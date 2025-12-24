@@ -338,7 +338,7 @@ def create_demo(tts_interface):
                 
                 speaker_dropdown = gr.Dropdown(
                     choices=tts_interface.tts.speakers,
-                    value=tts_interface.tts.speakers[0],
+                    value="female",
                     label="🎤 Chọn giọng đọc",
                     info="Chọn người đọc từ danh sách"
                 )
