@@ -255,11 +255,11 @@ def create_demo(tts_interface):
     """Create Gradio interface."""
     
     examples = [
-        ["Hello, have a great day", "NF", 1.0, 0.667, 0.8, 0.0],
-        ["The morning sky is clear blue and the breeze is gentle", "NM1", 1.0, 0.667, 0.8, 0.0],
-        ["I brew a hot cup of coffee and watch the sunlight through the window", "SF", 1.0, 0.667, 0.8, 0.0],
-        ["Vietnam is a beautiful country with rich culture", "SM", 0.9, 0.667, 0.8, 0.0],
-        ["The village road is canopied by fresh green bamboo", "NM2", 1.1, 0.667, 0.8, 0.0],
+        ["Xin chào, chúc bạn một ngày tốt lành", "NF", 1.0, 0.667, 0.8, 0.0],
+        ["Bầu trời buổi sáng trong xanh và gió nhẹ nhàng", "NM1", 1.0, 0.667, 0.8, 0.0],
+        ["Tôi pha một tách cà phê nóng và ngắm ánh nắng qua cửa sổ", "SF", 1.0, 0.667, 0.8, 0.0],
+        ["Việt Nam là một đất nước xinh đẹp với nền văn hóa phong phú", "SM", 0.9, 0.667, 0.8, 0.0],
+        ["Con đường làng quê lợp mái bằng tre xanh tươi", "NM2", 1.1, 0.667, 0.8, 0.0],
     ]
     
     with gr.Blocks(
