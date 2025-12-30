@@ -4,37 +4,75 @@ emoji: 🎙️
 colorFrom: blue
 colorTo: purple
 sdk: gradio
-sdk_version: 5.38.0
+sdk_version: 4.0.0
 app_file: app.py
 pinned: false
-license: cc-by-nc-4.0
+license: mit
 ---
 
-# 🎙️ Valtec Vietnamese TTS
+# Valtec Vietnamese TTS - 5-Speaker System
 
-Vietnamese Text-to-Speech system with high-quality voice synthesis.
+🎙️ **Vietnamese Text-to-Speech with Regional Accents**
+
+Vietnamese TTS system supporting 5 different voices with Northern and Southern regional accents.
 
 ## Features
 
-- 🇻🇳 **Vietnamese TTS** with natural prosody and intonation
-- 👥 **Multi-speaker**: Male and Female voices
-- ⚡ **Fast inference** on both CPU and GPU
-- 🎛️ **Adjustable settings**: Speed, noise scale, duration control
+- ✅ **5 Vietnamese Voices**: NF, SF, NM1, SM, NM2 (Northern/Southern, Male/Female)
+- ✅ **Accurate G2P**: Vietnamese grapheme-to-phoneme conversion
+- ✅ **High Quality**: VITS-based neural TTS
+- ✅ **Fast Inference**: GPU-accelerated synthesis
+- ✅ **Browser Demo**: ONNX Runtime Web version available
+
+## Available Speakers
+
+| Code | Region | Gender | Description |
+|------|--------|--------|-------------|
+| **NF** | Northern (Bắc) | Female | Formal, clear pronunciation |
+| **SF** | Southern (Nam) | Female | Friendly, casual tone |
+| **NM1** | Northern (Bắc) | Male | Professional voice |
+| **SM** | Southern (Nam) | Male | Conversational style |
+| **NM2** | Northern (Bắc) | Male | Authoritative tone |
 
 ## Usage
 
-1. Enter Vietnamese text in the input box
-2. Select a speaker (male/female)
-3. Click "Tạo giọng nói" to generate audio
-4. Listen and download the result
+### Gradio Interface (This Space)
+
+1. Enter Vietnamese text
+2. Select a voice
+3. Adjust synthesis parameters
+4. Click "Generate Speech"
+
+### Web Demo (Static HTML)
+
+Switch to the "Web Demo" tab for browser-based inference using ONNX Runtime Web.
+
+### Python API
+
+```python
+from valtec_tts import VietnameseTTS
+
+tts = VietnameseTTS()
+audio = tts.synthesize("Xin chào Việt Nam", speaker="NF")
+```
 
 ## Model Info
 
-- **Architecture**: VITS-based
-- **Parameters**: ~58M
+- **Architecture**: VITS (Conditional Variational Autoencoder)
+- **Speakers**: 5 (Northern/Southern Vietnamese accents)
 - **Sample Rate**: 24kHz
-- **Speakers**: Male, Female
+- **Model Size**: ~220MB (PyTorch), ~165MB (ONNX)
+
+## Links
+
+- 🏠 [GitHub Repository](https://github.com/valtecAI-team/valtec-tts)
+- 📦 [ONNX Models](https://huggingface.co/valtecAI-team/valtec-tts-onnx)
+- 🎯 [Edge Deployment Guide](https://github.com/valtecAI-team/valtec-tts/tree/main/deployments/edge)
 
 ## License
 
-This project is licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
+MIT License - Free for commercial and non-commercial use.
+
+---
+
+**Powered by Valtec AI Team** | Built with Gradio & ONNX Runtime
