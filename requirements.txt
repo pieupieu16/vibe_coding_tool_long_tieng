@@ -1,34 +1,9 @@
-# Core dependencies
+gradio==4.44.0
 torch>=2.0.0
 torchaudio>=2.0.0
-numpy
-scipy
-soundfile
-librosa==0.9.2
-tqdm
-
-# Text processing
-Unidecode
-num2words
-inflect
-cn2an
-jieba
-pypinyin
-jamo
-anyascii
-
-# Phonemization
-gruut
-gruut-ipa
-gruut_lang_en
-g2p-en
-viphoneme
-eng-to-ipa
-
-# Vietnamese NLP
-underthesea
-vinorm
-
-# Web UI
-gradio>=5.0.0
-huggingface_hub>=0.20.0
+numpy>=1.24.0
+scipy>=1.10.0
+librosa>=0.10.0
+soundfile>=0.12.0
+viphoneme>=0.1.0
+huggingface_hub>=0.19.0
