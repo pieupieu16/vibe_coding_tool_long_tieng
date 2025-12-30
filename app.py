@@ -255,16 +255,16 @@ def create_demo(tts_interface):
     """Create Gradio interface."""
     
     examples = [
-        ["Xin chào, chúc bạn một ngày tốt lành", "male", 1.0, 0.667, 0.8, 0.0],
-        ["Buổi sáng hôm nay trời trong xanh và gió thổi rất nhẹ", "male", 1.0, 0.667, 0.8, 0.0],
-        ["Tôi pha một tách cà phê nóng và ngồi nhìn ánh nắng chiếu qua cửa sổ", "female", 1.0, 0.667, 0.8, 0.0],
-        ["Việt Nam là một đất nước xinh đẹp với văn hóa phong phú", "male", 0.9, 0.667, 0.8, 0.0],
-        ["Con đường làng quê rợp bóng tre xanh mát rượi", "female", 1.1, 0.667, 0.8, 0.0],
+        ["Hello, have a great day", "NF", 1.0, 0.667, 0.8, 0.0],
+        ["The morning sky is clear blue and the breeze is gentle", "NM1", 1.0, 0.667, 0.8, 0.0],
+        ["I brew a hot cup of coffee and watch the sunlight through the window", "SF", 1.0, 0.667, 0.8, 0.0],
+        ["Vietnam is a beautiful country with rich culture", "SM", 0.9, 0.667, 0.8, 0.0],
+        ["The village road is canopied by fresh green bamboo", "NM2", 1.1, 0.667, 0.8, 0.0],
     ]
     
     with gr.Blocks(
         theme=gr.themes.Soft(primary_hue="blue", secondary_hue="cyan"),
-        title="Chuyển Văn Bản Thành Giọng Nói Tiếng Việt",
+        title="Vietnamese Text-to-Speech",
         css="""
         /* Base styles - Mobile first */
         .gradio-container { 
@@ -330,21 +330,21 @@ def create_demo(tts_interface):
         with gr.Row():
             with gr.Column(scale=2):
                 text_input = gr.Textbox(
-                    label="📝 Văn bản đầu vào",
-                    placeholder="Nhập văn bản tiếng Việt ở đây...",
+                    label="📝 Text Input",
+                    placeholder="Enter Vietnamese text here...",
                     lines=5,
                     max_lines=10,
                 )
                 
                 speaker_dropdown = gr.Dropdown(
                     choices=tts_interface.tts.speakers,
-                    value="female",
-                    label="🎤 Chọn giọng đọc",
-                    info="Chọn người đọc từ danh sách"
+                    value="NF",
+                    label="🎤 Select Voice",
+                    info="NF=Northern Female, SF=Southern Female, NM1/NM2=Northern Male, SM=Southern Male"
                 )
                 
                 synthesize_btn = gr.Button(
-                    "🔊 Tạo giọng nói",
+                    "🔊 Generate Speech",
                     variant="primary",
                     size="lg"
                 )
