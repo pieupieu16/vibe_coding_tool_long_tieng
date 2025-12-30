@@ -9,3 +9,4 @@ viphoneme>=0.1.0
 vinorm>=0.1.0
 huggingface_hub>=0.19.0
 underthesea>=0.1.0
+eng_to_ipa>=0.1.0
