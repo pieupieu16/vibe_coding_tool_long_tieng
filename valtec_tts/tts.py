@@ -76,7 +76,7 @@ class TTS:
         # Determine device
         if device == "auto":
             import torch
-            self.device = "cuda" if torch.cuda.is_available() else "cpu"
+            self.device = "cpu" if torch.cuda.is_available() else "cpu"
         else:
             self.device = device
         

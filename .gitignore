@@ -1,0 +1,13 @@
+# Các thư mục chứa mô hình nặng
+models/
+valtec_tts/models/
+*.pth
+*.bin
+*.onnx
+
+# File tạm và môi trường ảo
+__pycache__/
+venv/
+.env
+*.wav
+*.mp3
